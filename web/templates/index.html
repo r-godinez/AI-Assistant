@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🤖 AI Assistant</h2>
+                <button id="new-chat" class="btn btn-primary">New Chat</button>
+            </div>
+            
+            <div class="model-selection">
+                <label for="model-select">Model:</label>
+                <select id="model-select">
+                    <option value="llama3.2">Loading...</option>
+                </select>
+            </div>
+            
+            <div class="settings">
+                <label for="temperature">Temperature: <span id="temp-value">0.7</span></label>
+                <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7">
+                
+                <label>
+                    <input type="checkbox" id="stream-mode" checked> Stream responses
+                </label>
+            </div>
+            
+            <div class="status">
+                <div id="connection-status">Checking connection...</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-container">
+                <div id="messages" class="messages"></div>
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea id="message-input" placeholder="Type your message..." rows="3"></textarea>
+                        <button id="send-button" class="btn btn-send">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
